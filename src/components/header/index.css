@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #cfcfcf;
+    margin-bottom: 15px;
+}
+
+.dog-header {
+    height: 40px;
+    margin: 10px;
+}
+
+.link-header {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+.link-header:hover, .link-header:active {
+    background-color: #f3f3f3ad;
+}
+
+.link-header::after {
+    content: '';
+    margin-left: 3px;
+    display: inline-block;
+    width: 14px;
+    height: 17px;
+    background: url('../../Assets/usuario.svg') no-repeat center center;
+}

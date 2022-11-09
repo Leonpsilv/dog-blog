@@ -1,0 +1,25 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", Helvetica, Arial, sans-serif;
+    color:#222222;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a { 
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
