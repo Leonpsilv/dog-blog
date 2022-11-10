@@ -1,11 +1,12 @@
 import './index.css';
 import { ReactComponent as DogsHeader } from "../../Assets/dogs.svg";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <nav className='header'>
-      <a href='/'><DogsHeader className='dog-header'/></a>
-      <a href='/' className='link-header'>Login / Criar </a>
+      <Link to='/'> <DogsHeader className='dog-header'/> </Link>
+      <Link to='/login' className='link-header'>Login / Criar </Link>
     </nav>
   )
 }
