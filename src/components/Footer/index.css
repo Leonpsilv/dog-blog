@@ -5,9 +5,9 @@
     align-items: center;
     justify-content: center;
     color: #764701;
-    position: relative;
+    position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: auto;
     width: 100%;
     padding: 50px;
 }

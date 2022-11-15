@@ -12,7 +12,7 @@ const Login = () => {
 
   return (
     <div className="login anime-left">
-      <section className='logo'></section>
+      <div className='logo'></div>
         <div className='form'>
           <h1 className='title'>Login</h1>
 
