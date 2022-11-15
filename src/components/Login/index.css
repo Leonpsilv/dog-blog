@@ -2,10 +2,22 @@
     margin-top: 65px;
     height: 100vh;
     width: 100%;
+    display: flex;
+}
+
+.logo {
+    margin-bottom: 400px;
+    margin-right: 20px;
+    width: 600px;
+    height: 100vh;
+    background: url('../../Assets/login.jpg') no-repeat 50%;
+    background-size: cover;
 }
 
 .form {
-    margin: 15px 2px;
+    min-width: 40%;
+    margin-right: 50px;
+    margin: 25px 10px;
     display: block;
 }
 
@@ -86,3 +98,70 @@
     box-shadow: 0 0 0 1px #fb1, 0 0 0 4px #fea;
 }
 
+.lost-password {
+    display: block;
+    color: #666;
+    width: max-content;
+    padding: 0.5rem 0;
+    margin: 25px 0;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lost-password::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: #666;
+    display: block;
+}
+
+.register {
+    margin-top: 35px;
+}
+
+.register-title {
+    font-family: 'Spectral', serif;
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.register-title::after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+    width: 3.5rem;
+    background-color: #ddd;
+    position: absolute;
+    z-index: -1;
+    bottom: 3px;
+    left: -4px;
+    border-radius: 2px;
+}
+
+.register p {
+    margin-bottom: 30px;
+}
+
+.form-link {
+    font-size: 1rem;
+    cursor: pointer;
+    background: #fb1;
+    color: #764701;
+    min-width: 8rem;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    transition: .2s;
+}
+
+.form-link:hover,
+.form-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+}
+
+.form-link:disabled{
+    opacity: 75%;
+    cursor: wait
+}
