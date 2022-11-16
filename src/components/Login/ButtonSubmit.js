@@ -7,17 +7,18 @@ const ButtonSubmit = ({
     id,
     data
 }) => {
-  const {userLogin} = useContext(UserContext);
+  const {userLogin, userRegister} = useContext(UserContext);
   const userData = data;
 
-  function handleSubmit (login) {
-    if (id === 'login'){
-      if (!login.user || !login.password) return
+  function handleSubmit (userData) {
+    if (!userData.user || !userData.password) return
 
-      userLogin(login.user, login.password)
+    if (id === 'login'){
+      userLogin(userData.user, userData.password);
     }
+
     if (id === 'register') {
-      console.log('register');
+      userRegister(userData.user, userData.password, userData.email);
     }
     return
   }

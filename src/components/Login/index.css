@@ -10,9 +10,21 @@
         max-width: 0px;
         max-height: 0px;
     }
-
+    .login {
+        margin-bottom: 50px;
+    }
     .form {
         width: 90%;
+    }
+}
+
+@media (max-height: 540px) {
+    .logo{
+        max-width: 0px;
+        max-height: 0px;
+    }
+    .login {
+        margin-bottom: 300px;
     }
 }
 

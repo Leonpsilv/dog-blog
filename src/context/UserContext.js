@@ -1,6 +1,6 @@
 import { getSuggestedQuery } from '@testing-library/react';
 import React, { createContext, useState } from 'react';
-import { TOKEN_POST, USER_GET } from '../api';
+import { TOKEN_POST, USER_GET, USER_REGISTER } from '../api';
 
 export const UserContext = createContext();
 
@@ -33,8 +33,18 @@ export const UserStorage = ({children}) => {
     }
   }
 
+  async function userRegister (username, password, email) {
+    const {url, options} = USER_REGISTER({username, password, email});
+    const response = await fetch(url, options);
+    const json = await response.json();
+
+    if(!json.code || json.code !== 'error') {
+      setData(json);
+    }
+  }
+
 return (
-  <UserContext.Provider value={{userLogin, data}}>
+  <UserContext.Provider value={{userLogin, data, userRegister}}>
     {children}
   </UserContext.Provider>
 );
