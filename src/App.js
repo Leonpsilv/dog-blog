@@ -8,6 +8,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { UserStorage } from './context/UserContext';
 import RegisterForm from './pages/Register';
+import ProtectedRoutes from './Helper/ProtectedRoutes';
+import Logged from './Helper/Logged';
 
 function App() {
   return (
@@ -16,8 +18,8 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/eu' element={<MyPage />} />
+          <Route path='/login/*' element={<Logged> <Login /> </Logged>} />
+          <Route path='/eu/*' element={<ProtectedRoutes> <MyPage /> </ProtectedRoutes> } />
           <Route path='/login/cadastrar' element={<RegisterForm />} />
         </Routes>
         <Footer />

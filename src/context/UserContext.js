@@ -1,4 +1,4 @@
-import { getSuggestedQuery } from '@testing-library/react';
+//import { getSuggestedQuery } from '@testing-library/react';
 import React, { createContext, useState } from 'react';
 import { TOKEN_POST, USER_GET, USER_REGISTER } from '../api';
 import  useFetch from '../Hooks/useFetch';
@@ -7,7 +7,7 @@ export const UserContext = createContext();
 
 export const UserStorage = ({children}) => {
   const [data, setData] = useState(null);
-  const [login, setLogin] = useState(null);
+  const [login, setLogin] = useState(false);
   // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState(null);
 
@@ -24,11 +24,16 @@ export const UserStorage = ({children}) => {
 
   async function userLogin (username, password) {
     const token = window.localStorage.getItem('token'); 
-    if(token) getUser(token);
+    if(token){
+      getUser(token);
+    }else{
+      setLogin(false);
+    }
 
     const {url, options} = TOKEN_POST({username, password});
-    const response = await fetch(url, options);
-    const data = await response.json();
+    const response = await request(url, options);
+    console.log(error);
+    const data = await response.json;
     if(data.token){
         window.localStorage.setItem('token', data.token);
     
@@ -45,8 +50,20 @@ export const UserStorage = ({children}) => {
     }
   }
 
+  async function userLogoff () {
+    
+    //setLogin(false);
+  }
+
 return (
-  <UserContext.Provider value={{userLogin, data, userRegister}}>
+  <UserContext.Provider value={{
+    userLogin,
+    userRegister,
+    userLogoff,
+    data,
+    login
+  }}>
+
     {children}
   </UserContext.Provider>
 );
