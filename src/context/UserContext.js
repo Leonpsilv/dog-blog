@@ -1,14 +1,17 @@
 import { getSuggestedQuery } from '@testing-library/react';
 import React, { createContext, useState } from 'react';
 import { TOKEN_POST, USER_GET, USER_REGISTER } from '../api';
+import  useFetch from '../Hooks/useFetch';
 
 export const UserContext = createContext();
 
 export const UserStorage = ({children}) => {
   const [data, setData] = useState(null);
   const [login, setLogin] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(null);
+
+  const {loading, error, request} = useFetch();
 
   async function getUser (token) {
     const {url, options} = USER_GET(token);
@@ -35,11 +38,10 @@ export const UserStorage = ({children}) => {
 
   async function userRegister (username, password, email) {
     const {url, options} = USER_REGISTER({username, password, email});
-    const response = await fetch(url, options);
-    const json = await response.json();
-
+    const response = await request(url, options);
+    const json = await response.json;
     if(!json.code || json.code !== 'error') {
-      setData(json);
+      console.log(json);
     }
   }
 
