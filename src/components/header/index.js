@@ -11,7 +11,7 @@ const Header = () => {
     <nav className='header'>
       <Link to='/'> <DogsHeader className='dog-header'/> </Link>
       {data ?
-      (<Link to='/login' className='link-header'>{data.username}</Link>)
+      (<Link to='/eu' className='link-header'>{data.username}</Link>)
       :
       (<Link to='/login' className='link-header'>Login / Criar </Link>)}
       
