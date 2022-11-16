@@ -10,6 +10,10 @@
         max-width: 0px;
         max-height: 0px;
     }
+
+    .form {
+        width: 90%;
+    }
 }
 
 .logo {
