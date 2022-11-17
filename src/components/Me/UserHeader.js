@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
 
 
 const UserHeader = () => {
-  const { userLogoff } = useContext(UserContext);
+  const { userLogout } = useContext(UserContext);
   const [title, setTitle] = useState('Minha conta');
   const location = useLocation();
 
@@ -23,10 +23,6 @@ const UserHeader = () => {
     
   }, [location]);
 
-  async function handleClick () {
-    userLogoff();
-  }
-
   return (
       <div className='mp-header'>
         <h1 className='title'>{title}</h1>
@@ -35,7 +31,7 @@ const UserHeader = () => {
           <NavItem url='/eu/' id='feed' className='mp-nav-item' content={<Feed />} />
           <NavItem url='/eu/stats' id='stats' className='mp-nav-item' content={<Stats />} />
           <NavItem url='/eu/add' id='add-post' className='mp-nav-item' content={<AddPost />} />
-          <a onClick={() => handleClick} className='mp-nav-item logoff'> <Logoff/> </a>
+          <a onClick={userLogout} className='mp-nav-item logoff'> <Logoff/> </a>
         </nav>
       </div>  
   )

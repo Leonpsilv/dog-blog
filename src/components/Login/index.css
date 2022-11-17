@@ -76,6 +76,7 @@
 }
 
 .form-btn {
+    display: block;
     font-size: 1rem;
     cursor: pointer;
     background: #fb1;
