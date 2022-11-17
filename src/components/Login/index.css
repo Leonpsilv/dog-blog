@@ -188,3 +188,8 @@
     opacity: 75%;
     cursor: wait
 }
+
+.msg-error {
+    margin-top: 10px;
+    color: red;
+}

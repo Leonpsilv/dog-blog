@@ -7,10 +7,15 @@ const ButtonSubmit = ({
     id,
     data
 }) => {
-  const {userLogin, userRegister} = useContext(UserContext);
+  const {userLogin, userRegister, error, loading} = useContext(UserContext);
   const userData = data;
 
   function handleSubmit (userData) {
+    if (id === 'post') {
+      console.log('botao postar foto');
+      return;
+    }
+
     if (!userData.user || !userData.password) return
 
     if (id === 'login'){
@@ -24,13 +29,27 @@ const ButtonSubmit = ({
   }
 
   return (
-    <button
-      className={className}
-      id={id}
-      onClick={() => handleSubmit(userData)}
-    >
-      {text}
-    </button>
+    <>
+    {loading ? (
+      <button
+        className={className}
+        id={id}
+        disabled
+      >
+        Carregando...
+      </button>
+      ):(
+      <button
+        className={className}
+        id={id}
+        onClick={() => handleSubmit(userData)}
+      >
+        {text}
+      </button>
+    )}
+
+    {error && <p className='msg-error'>{error}</p>}
+    </>
   )
 };
 
