@@ -13,7 +13,7 @@ import { useLocation } from 'react-router-dom';
 
 const UserHeader = () => {
   const { userLogoff } = useContext(UserContext);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState('Minha conta');
   const location = useLocation();
 
   useEffect(() => {
