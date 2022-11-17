@@ -4,20 +4,39 @@
     width: 100%;
     height: 100vh;
 }
+
 .mp-header {
     display: flex;
     justify-content: space-around;
     margin-top: 80px;
 }
 
+@media (max-width: 650px) {
+    .mp-header{
+        display: block;
+    }
+
+    .mp-header h1{
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .mp-header nav{
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
 .mp-nav {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    height: 90%;
+    height: fit-content;
 }
 
 .mp-nav-item {
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin: 10px;
     padding: 0.6rem;
@@ -28,5 +47,9 @@
 .mp-nav-item:hover,
 .mp-nav-item:focus {
     background-color: #bdbdbd;
+}
+
+.logoff {
+    cursor: pointer;
 }
 
