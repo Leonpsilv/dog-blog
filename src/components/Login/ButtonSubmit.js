@@ -5,25 +5,26 @@ const ButtonSubmit = ({
     text,
     className,
     id,
-    data
+    data // data
 }) => {
   const {userLogin, userRegister, error, loading} = useContext(UserContext);
-  const userData = data;
 
-  function handleSubmit (userData) {
+  function handleSubmit (data) {
     if (id === 'post') {
       console.log('botao postar foto');
       return;
     }
 
-    if (!userData.user || !userData.password) return
-
     if (id === 'login'){
-      userLogin(userData.user, userData.password);
+      const {username, password} = data
+      if(!username.validate() || !password.validate()) return;
+      userLogin(username.value, password.value);
     }
 
     if (id === 'register') {
-      userRegister(userData.user, userData.password, userData.email);
+      const {username, password, email} = data
+      if(!username.validate() || !password.validate() || !email.validate()) return;
+      userRegister(username.value, password.value, email.value);
     }
     return
   }
@@ -42,7 +43,7 @@ const ButtonSubmit = ({
       <button
         className={className}
         id={id}
-        onClick={() => handleSubmit(userData)}
+        onClick={() => handleSubmit(data)}
       >
         {text}
       </button>

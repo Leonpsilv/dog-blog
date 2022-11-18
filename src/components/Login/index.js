@@ -1,14 +1,15 @@
 import './index.css';
-import { useState, useContext} from 'react';
+import { useState} from 'react';
 
 import Input from './Input';
 import ButtonSubmit from './ButtonSubmit';
 import ButtonRedirect from './ButtonRedirect';
 import { Link } from 'react-router-dom';
+import useForm from '../../Hooks/useForm';
 
 const Login = () => {
-  const [user, setUser] = useState();
-  const [password, setPassword] = useState();
+  const username = useForm();
+  const password = useForm();
 
   return (
     <div className="login anime-left">
@@ -23,8 +24,9 @@ const Login = () => {
             id='user'
             className='form-input'
             placeholder='digite seu usuário'
-            handleChage={({target}) => {setUser(target.value)}}
-            value={user}
+            value={username.value}
+
+            {...username}
           />
 
           <label htmlFor='password'>Senha</label>
@@ -34,15 +36,16 @@ const Login = () => {
             id='password'
             className='form-input'
             placeholder='digite sua senha'
-            handleChage={({target}) => {setPassword(target.value)}}
-            value={password}
+            value={password.value}
+
+            {...password}
           />
 
           <ButtonSubmit
             className='form-btn'
             text="Entrar"
             id="login"
-            data={{user, password}}
+            data={{username, password}}
           /> 
           
           <Link to='/login/perdeu' className='lost-password'>Esqueceu a senha? </Link>

@@ -2,11 +2,12 @@
 import { useState } from 'react';
 import Input from '../Login/Input';
 import ButtonSubmit from '../Login/ButtonSubmit';
+import useForm from '../../Hooks/useForm';
 
 const Register = () => {
-  const [user, setUser] = useState();
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState();
+  const username = useForm();
+  const password = useForm();
+  const email = useForm('email');
   return (
     <div className="login anime-left">
       <section className='logo'></section>
@@ -19,8 +20,9 @@ const Register = () => {
             id='user'
             className='form-input'
             placeholder='digite seu usuário'
-            handleChage={({target}) => {setUser(target.value)}}
-            value={user}
+            value={username.value}
+
+            {...username}
           />
           
           <label htmlFor='email'>Email</label>
@@ -30,8 +32,9 @@ const Register = () => {
             id='email'
             className='form-input'
             placeholder='digite seu email'
-            handleChage={({target}) => {setEmail(target.value)}}
-            value={email}
+            value={email.value}
+
+            {...email}
           />
 
           <label htmlFor='password'>Senha</label>
@@ -41,15 +44,16 @@ const Register = () => {
             id='password'
             className='form-input'
             placeholder='digite sua senha'
-            handleChage={({target}) => {setPassword(target.value)}}
-            value={password}
+            value={password.value}
+
+            {...password}
           />
 
           <ButtonSubmit
             className='form-btn'
             text="Cadastrar"
             id="register"
-            data={{user, password, email}}
+            data={{username, password, email}}
           /> 
       </div>
     </div>

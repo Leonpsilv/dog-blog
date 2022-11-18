@@ -4,18 +4,24 @@ const Input = ({
     id,
     className,
     placeholder,
-    handleChage,
-    password
+    onChange,
+    value,
+    error,
+    onBlur
 }) => (
-  <input
-    type={type}
-    name={name}
-    id={id}
-    className={className}
-    placeholder={placeholder}
-    onChange={handleChage}
-    value={password}
-  />
+  <>
+    {error && <p className="msg-error">{error}</p>}
+    <input
+      type={type}
+      name={name}
+      id={id}
+      className={className}
+      placeholder={placeholder}
+      onChange={onChange}
+      value={value}
+      onBlur={onBlur}
+    />
+  </>
 );
 
 export default Input;
