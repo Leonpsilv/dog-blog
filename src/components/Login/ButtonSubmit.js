@@ -10,11 +10,6 @@ const ButtonSubmit = ({
   const {userLogin, userRegister, error, loading} = useContext(UserContext);
 
   function handleSubmit (data) {
-    if (id === 'post') {
-      console.log('botao postar foto');
-      return;
-    }
-
     if (id === 'login'){
       const {username, password} = data
       if(!username.validate() || !password.validate()) return;

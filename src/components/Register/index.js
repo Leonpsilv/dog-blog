@@ -6,7 +6,7 @@ import useForm from '../../Hooks/useForm';
 
 const Register = () => {
   const username = useForm();
-  const password = useForm();
+  const password = useForm('password');
   const email = useForm('email');
   return (
     <div className="login anime-left">
