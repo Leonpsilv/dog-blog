@@ -3,17 +3,24 @@ import './css/UserPhotoPost.css';
 import Input from '../Login/Input';
 import ButtonSubmit from '../Login/ButtonSubmit';
 import useForm from '../../Hooks/useForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useFetch from '../../Hooks/useFetch';
 import { PHOTO_POST } from '../../api';
+import { useNavigate } from 'react-router-dom';
 
 const UserPhotoPost = () => {
+  const navigate = useNavigate();
+
   const name = useForm();
   const age = useForm('number');
   const mass = useForm('number');
   const [img, setImg] = useState({});
 
   const {data, loading, error, request} = useFetch();
+
+  useEffect(() => {
+    if(data) navigate('/eu');
+  }, [data, navigate]);
 
   async function handleSubmit (event) {
     event.preventDefault();
@@ -80,12 +87,17 @@ const UserPhotoPost = () => {
           className='user-post-file'
         />
 
-        <ButtonSubmit
-          className='form-btn'
-          text="Enviar"
-          id="post"
-          // data={{name, mass, age}}
-        /> 
+        {loading ?
+          <button disabled className='form-btn'>Enviando...</button>
+          : 
+          <ButtonSubmit
+            className='form-btn'
+            text="Enviar"
+            id="post"
+          />
+        }
+
+        
       </form>
 
       <div>
