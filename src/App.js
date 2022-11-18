@@ -22,7 +22,7 @@ function App() {
           <Route path='/eu/*' element={<ProtectedRoutes> <MyPage /> </ProtectedRoutes> } />
           <Route path='/login/cadastrar' element={<RegisterForm />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </UserStorage>
     </BrowserRouter>
   );
