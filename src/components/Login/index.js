@@ -9,7 +9,7 @@ import useForm from '../../Hooks/useForm';
 
 const Login = () => {
   const username = useForm();
-  const password = useForm('password');
+  const password = useForm();
 
   return (
     <div className="login anime-left">

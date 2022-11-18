@@ -1,0 +1,48 @@
+.photo-feed:nth-child(2){
+    grid-column: 2/4;
+    grid-row: span 2;
+}
+
+@media (max-width: 40rem) {
+    .photo-feed:nth-child(2){
+        grid-column: initial;
+        grid-row: initial;
+    }
+}
+
+.photo-feed {
+    display: grid;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+}
+
+.photo-feed img {
+    border-radius: 0.2rem;
+    margin: 0;
+    grid-area: 1/1;
+}
+
+.views-feed {
+    grid-area: 1/1;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.photo-feed:hover .views-feed {
+    display: flex;
+}
+
+.views-feed::before {
+    content: '';
+    width: 16px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 0.25rem;
+    background: url('../../../Assets/visualizacao.svg') no-repeat center center;
+}

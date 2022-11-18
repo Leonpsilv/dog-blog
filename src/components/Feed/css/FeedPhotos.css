@@ -1,0 +1,15 @@
+.feed-photos {
+    max-width: 900px;
+    margin: 75px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    justify-items: center;
+}
+
+@media (max-width: 40rem) {
+    .feed-photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
