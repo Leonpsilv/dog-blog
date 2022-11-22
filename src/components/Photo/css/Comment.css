@@ -1,0 +1,36 @@
+.photo-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.photo-text-comment {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #eee;
+    font-size: .9rem;
+    border-radius: 3px;
+    resize: none;
+}
+
+.photo-error {
+    z-index: 5;
+    background: white;
+}
+
+.photo-btn-comment {
+    height: 2.5rem;
+    width: 3.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: .6rem;
+    padding: .2rem;
+}
+
+.photo-btn-comment:focus,
+.photo-btn-comment:hover {
+    background: #d1d1d1;
+}
