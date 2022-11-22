@@ -2,9 +2,14 @@ import './PhotoModal.css';
 
 import { Link } from "react-router-dom";
 import PhotoComments from "./PhotoComments";
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
+import PhotoDelete from './PhotoDelete';
 
 const PhotoModal = ({data}) => {
   const {photo, comments} = data;
+  const user = useContext(UserContext);
+  
   return (
     <div className="modal-photo">
       <div className="modal-photo-img"> <img src={photo.src} alt={photo.alt} /> </div>
@@ -12,7 +17,11 @@ const PhotoModal = ({data}) => {
       <div className="modal-details">
         <div>
           <p className="modal-author">
-            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            {user.data && user.data.username == photo.author ?
+            <PhotoDelete id={photo.id} />
+            :
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            }
             <span className="modal-views">{photo.acessos}</span>
           </p>
           

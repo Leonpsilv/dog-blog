@@ -1,0 +1,16 @@
+.photo-delete-btn {
+    background: #eee;
+    padding: 0.5rem;
+    cursor: pointer;
+    line-height: 1;
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    border-radius: .4rem;
+}
+
+.photo-delete-btn:hover,
+.photo-delete-btn:focus {
+    background: white;
+    outline: none;
+    box-shadow: 0 0 0 3px #e3e3e3;
+}
