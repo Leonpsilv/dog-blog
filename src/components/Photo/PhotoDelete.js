@@ -1,6 +1,6 @@
 import { PHOTO_DELETE } from '../../api';
 import useFetch from '../../Hooks/useFetch';
-import './PhotoDelete.css';
+import './css/PhotoDelete.css';
 
 const PhotoDelete = ({id}) => {
   const {request, loading} = useFetch();
