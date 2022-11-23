@@ -15,11 +15,13 @@ const Me = () => {
   return (
     <div className='my-page'>
       <UserHeader />
+      <div className='my-page-body'>
         <Routes>
           <Route path="/" element={ <Feed user={data.id} /> } />
           <Route path="/stats" element={ <UserStats /> } />
           <Route path="/add" element={ <UserPhotoPost /> } />
         </Routes>
+      </div>
     </div>
   )
 }
