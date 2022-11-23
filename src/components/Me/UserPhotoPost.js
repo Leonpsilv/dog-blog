@@ -16,7 +16,7 @@ const UserPhotoPost = () => {
   const mass = useForm('number');
   const [img, setImg] = useState({});
 
-  const {data, loading, error, request} = useFetch();
+  const {data, loading, request} = useFetch();
 
   useEffect(() => {
     if(data) navigate('/eu');

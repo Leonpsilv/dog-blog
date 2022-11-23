@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET, USER_REGISTER } from '../api';
 import  useFetch from '../Hooks/useFetch';
 
@@ -10,7 +9,7 @@ export const UserStorage = ({children}) => {
   const [login, setLogin] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const {loading: loadingFetch, error: errorFetch, request} = useFetch();
+  const {request} = useFetch();
 
   useEffect(() => {
     async function autoLogin () {

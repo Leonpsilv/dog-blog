@@ -8,7 +8,7 @@ const UserStatsGraph = ({data}) => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    // if (data.length === 0) return;
+    if (!data || data.length === 0) return;
 
     const graphData = data.map(item => {
         return {
@@ -18,9 +18,9 @@ const UserStatsGraph = ({data}) => {
     });
     
     setGraph(graphData);
-    // setTotal(
-    //     data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b)
-    // );
+    setTotal(
+        data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b)
+    );
   }, [data]);
 
   return (

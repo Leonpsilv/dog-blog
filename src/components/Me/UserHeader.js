@@ -31,7 +31,7 @@ const UserHeader = () => {
           <NavItem url='/eu/' id='feed' className='mp-nav-item' content={<Feed />} />
           <NavItem url='/eu/stats' id='stats' className='mp-nav-item' content={<Stats />} />
           <NavItem url='/eu/add' id='add-post' className='mp-nav-item' content={<AddPost />} />
-          <a onClick={userLogout} className='mp-nav-item logoff'> <Logoff/> </a>
+          <Logoff onClick={userLogout} className='mp-nav-item logoff' />
         </nav>
       </div>  
   )
