@@ -7,16 +7,16 @@ import Loading from '../../../Helper/Loading';
 import Error from '../../../Helper/Error';
 import FeedPhotosItem from './FeedPhotosItem';
 
-const FeedPhotos = ({setModal}) => {
+const FeedPhotos = ({user, setModal}) => {
   const {data, loading, error, request} = useFetch();
   
   useEffect(() => {
     async function fetchPhotos () {
-      const {url, options} = PHOTOS_GET({ page: 1, total: 10, user: 0 });
+      const {url, options} = PHOTOS_GET({ page: 1, total: 10, user });
       await request(url, options);
     }
     fetchPhotos();
-  }, [request]);
+  }, [request, user]);
 
   if(error) return <Error error={error} />
   if(loading) return <Loading />
