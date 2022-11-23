@@ -13,18 +13,22 @@ import Logged from './Helper/Logged';
 
 function App() {
   return (
-    <BrowserRouter>
-      <UserStorage>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login/*' element={<Logged> <Login /> </Logged>} />
-          <Route path='/eu/*' element={<ProtectedRoutes> <MyPage /> </ProtectedRoutes> } />
-          <Route path='/login/cadastrar' element={<RegisterForm />} />
-        </Routes>
-        {/* <Footer /> */}
-      </UserStorage>
-    </BrowserRouter>
+    <div className='App'>
+      <BrowserRouter>
+        <UserStorage>
+          <Header className='App-body'/>
+          <main>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/login/*' element={<Logged> <Login /> </Logged>} />
+              <Route path='/eu/*' element={<ProtectedRoutes> <MyPage /> </ProtectedRoutes> } />
+              <Route path='/login/cadastrar' element={<RegisterForm />} />
+            </Routes>
+          </main>
+          <Footer />
+        </UserStorage>
+      </BrowserRouter>
+    </div>
   );
 }
 
