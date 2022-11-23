@@ -3,3 +3,11 @@
     background-color: white;
     min-height: 100vh;
 }
+
+.feed-end {
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    color: #878787;
+}
