@@ -7,7 +7,7 @@ import Loading from '../../../Helper/Loading';
 import Error from '../../../Helper/Error';
 import FeedPhotosItem from './FeedPhotosItem';
 
-const FeedPhotos = ({user, page, setModal, setInfinite}) => {
+const FeedPhotos = ({user, page, setModal, setInfinite, setNoPhotos}) => {
   const {data, loading, error, request} = useFetch();
   const total = 6
   

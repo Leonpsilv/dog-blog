@@ -50,8 +50,7 @@ const Feed = ({user}) => {
          />
       ))}
       
-      {!infinite && !user && <p className='feed-end'>Não existem mais postagens.</p>}
-      {!infinite && user && <p className='feed-end'>Preencha seu feed com postagens</p>}
+      {!infinite && <p className='feed-end'>Todas as postagens já foram carregadas.</p>}
     </div>
   )
 }

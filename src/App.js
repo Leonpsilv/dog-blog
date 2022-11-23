@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import MyPage from './pages/Me';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Profile from './components/Profile';
 import { UserStorage } from './context/UserContext';
 import RegisterForm from './pages/Register';
 import ProtectedRoutes from './Helper/ProtectedRoutes';
@@ -23,6 +24,7 @@ function App() {
               <Route path='/login/*' element={<Logged> <Login /> </Logged>} />
               <Route path='/eu/*' element={<ProtectedRoutes> <MyPage /> </ProtectedRoutes> } />
               <Route path='/login/cadastrar' element={<RegisterForm />} />
+              <Route path='/perfil/:user' element={<Profile />} />
             </Routes>
           </main>
           <Footer />
