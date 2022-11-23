@@ -49,7 +49,9 @@ const Feed = ({user}) => {
            setInfinite={setInfinite}
          />
       ))}
-      {!infinite && <p className='feed-end'>Não existem mais postagens.</p>}
+      
+      {!infinite && !user && <p className='feed-end'>Não existem mais postagens.</p>}
+      {!infinite && user && <p className='feed-end'>Preencha seu feed com postagens</p>}
     </div>
   )
 }

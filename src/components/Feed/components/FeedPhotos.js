@@ -20,7 +20,7 @@ const FeedPhotos = ({user, page, setModal, setInfinite}) => {
 
     fetchPhotos();
 
-  }, [request, user, setInfinite]);
+  }, [request, user, setInfinite, page]);
 
   if(error) return <Error error={error} />
   if(loading) return <Loading />
