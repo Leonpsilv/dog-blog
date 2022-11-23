@@ -7,6 +7,7 @@ import UserPhotoPost from './UserPhotoPost';
 import UserStats from './UserStats';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
+import NotFound from '../NotFound';
 
 
 const Me = () => {
@@ -20,6 +21,7 @@ const Me = () => {
           <Route path="/" element={ <Feed user={data.id} /> } />
           <Route path="/stats" element={ <UserStats /> } />
           <Route path="/add" element={ <UserPhotoPost /> } />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
     </div>

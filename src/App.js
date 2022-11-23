@@ -11,6 +11,7 @@ import { UserStorage } from './context/UserContext';
 import RegisterForm from './pages/Register';
 import ProtectedRoutes from './Helper/ProtectedRoutes';
 import Logged from './Helper/Logged';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path='/eu/*' element={<ProtectedRoutes> <MyPage /> </ProtectedRoutes> } />
               <Route path='/login/cadastrar' element={<RegisterForm />} />
               <Route path='/perfil/:user' element={<Profile />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
