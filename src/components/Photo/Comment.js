@@ -1,8 +1,8 @@
 import './css/Comment.css';
 import { useState } from "react";
-import { ReactComponent as DogsComment } from "../../Assets/enviar.svg";
+import { ReactComponent as DogsComment } from "../../assets/enviar.svg";
 import { COMMENT_POST } from '../../api';
-import useFetch from '../../Hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 
 const Comment = ({photoId, setNewComments}) => {
   const [value, setValue] = useState();

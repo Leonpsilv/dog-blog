@@ -4,7 +4,7 @@ import Input from './Input';
 import ButtonSubmit from './ButtonSubmit';
 import ButtonRedirect from './ButtonRedirect';
 import { Link } from 'react-router-dom';
-import useForm from '../../Hooks/useForm';
+import useForm from '../../hooks/useForm';
 
 const Login = () => {
   const username = useForm();

@@ -1,9 +1,9 @@
 import './index.css';
 
-import { ReactComponent as AddPost } from "../../Assets/adicionar.svg";
-import { ReactComponent as Logoff } from "../../Assets/sair.svg";
-import { ReactComponent as Stats } from "../../Assets/estatisticas.svg";
-import { ReactComponent as Feed } from "../../Assets/feed.svg";
+import { ReactComponent as AddPost } from "../../assets/adicionar.svg";
+import { ReactComponent as Logoff } from "../../assets/sair.svg";
+import { ReactComponent as Stats } from "../../assets/estatisticas.svg";
+import { ReactComponent as Feed } from "../../assets/feed.svg";
 import NavItem from './NavItem';
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../context/UserContext';

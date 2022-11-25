@@ -1,6 +1,6 @@
 import Input from '../Login/Input';
 import ButtonSubmit from '../Login/ButtonSubmit';
-import useForm from '../../Hooks/useForm';
+import useForm from '../../hooks/useForm';
 
 const Register = () => {
   const username = useForm();

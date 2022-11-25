@@ -1,17 +1,18 @@
+import './global.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import './global.css';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import MyPage from './pages/Me';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Profile from './components/Profile';
+import Me from './Components/Me';
+import Feed from './Components/Feed';
+import Login from './Components/Login';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Profile from './Components/Profile';
+import NotFound from './Components/NotFound';
+import Register from './Components/Register';
+
+import Logged from './helper/Logged';
+import ProtectedRoutes from './helper/ProtectedRoutes';
 import { UserStorage } from './context/UserContext';
-import RegisterForm from './pages/Register';
-import ProtectedRoutes from './Helper/ProtectedRoutes';
-import Logged from './Helper/Logged';
-import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
           <Header className='App-body'/>
           <main>
             <Routes>
-              <Route path='/' element={<Home />} />
+              <Route path='/' element={<Feed />} />
               <Route path='/login/*' element={<Logged> <Login /> </Logged>} />
-              <Route path='/eu/*' element={<ProtectedRoutes> <MyPage /> </ProtectedRoutes> } />
-              <Route path='/login/cadastrar' element={<RegisterForm />} />
+              <Route path='/eu/*' element={<ProtectedRoutes> <Me /> </ProtectedRoutes> } />
+              <Route path='/login/cadastrar' element={<Register />} />
               <Route path='/perfil/:user' element={<Profile />} />
               <Route path='*' element={<NotFound />} />
             </Routes>

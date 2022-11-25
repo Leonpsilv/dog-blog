@@ -1,9 +1,9 @@
 import '../css/FeedModal.css';
 
-import useFetch from '../../../Hooks/useFetch';
+import useFetch from '../../../hooks/useFetch';
 import { PHOTO_GET } from '../../../api';
-import Loading from '../../../Helper/Loading';
-import Error from '../../../Helper/Error';
+import Loading from '../../../helper/Loading';
+import Error from '../../../helper/Error';
 import { useEffect } from 'react';
 import PhotoModal from '../../Photo/PhotoModal';
 

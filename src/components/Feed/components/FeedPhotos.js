@@ -1,10 +1,10 @@
 import "../css/FeedPhotos.css";
 import { useEffect } from "react";
 
-import useFetch from '../../../Hooks/useFetch';
+import useFetch from '../../../hooks/useFetch';
 import { PHOTOS_GET } from "../../../api";
-import Loading from '../../../Helper/Loading';
-import Error from '../../../Helper/Error';
+import Loading from '../../../helper/Loading';
+import Error from '../../../helper/Error';
 import FeedPhotosItem from './FeedPhotosItem';
 
 const FeedPhotos = ({user, page, setModal, setInfinite, setNoPhotos}) => {

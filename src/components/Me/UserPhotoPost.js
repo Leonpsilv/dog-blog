@@ -2,9 +2,9 @@ import './css/UserPhotoPost.css';
 
 import Input from '../Login/Input';
 import ButtonSubmit from '../Login/ButtonSubmit';
-import useForm from '../../Hooks/useForm';
+import useForm from '../../hooks/useForm';
 import { useEffect, useState } from 'react';
-import useFetch from '../../Hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { PHOTO_POST } from '../../api';
 import { useNavigate } from 'react-router-dom';
 

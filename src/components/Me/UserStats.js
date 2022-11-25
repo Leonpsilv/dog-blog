@@ -1,8 +1,8 @@
 import { useEffect, lazy, Suspense } from "react";
 import { STATS_GET } from "../../api";
-import Loading from "../../Helper/Loading";
-import Error from "../../Helper/Error";
-import useFetch from "../../Hooks/useFetch";
+import Loading from "../../helper/Loading";
+import Error from "../../helper/Error";
+import useFetch from "../../hooks/useFetch";
 const UserStatsGraph = lazy(() => import('./userStatsGraph'));
 
 const UserStats = () => {

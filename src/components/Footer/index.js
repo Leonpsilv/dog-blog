@@ -1,4 +1,4 @@
-import { ReactComponent as DogsFooter } from "../../Assets/dogs.svg";
+import { ReactComponent as DogsFooter } from "../../assets/dogs.svg";
 import './index.css';
 
 const Footer = () => {
